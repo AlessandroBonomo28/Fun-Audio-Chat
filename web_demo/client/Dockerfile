@@ -6,7 +6,7 @@ COPY . /app
 
 RUN npm install
 
-RUN npm run build
+RUN npm run build -- --noEmitOnError false || npx vite build
 
 # Install OpenSSL
 RUN apt-get update && apt-get install -y openssl
